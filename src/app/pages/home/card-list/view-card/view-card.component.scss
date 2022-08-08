@@ -1,0 +1,104 @@
+
+.card-container{
+    background-color: #fff;
+}
+
+.card-container mat-card {
+    cursor: pointer;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 4px 2px rgb(0, 0, 0, 12%);
+    overflow: hidden;
+}
+
+.card-container mat-card mat-card-title {
+    color: #43c4ac;
+    font-size: 36px;
+    line-height: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-clamp: 2;
+}
+
+.card-container mat-card mat-card-subtitle {
+    color: #191645;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    line-clamp: 1;
+}
+
+.card-container mat-card p {
+    font-size: 18px;
+    color: #808080;
+}
+
+
+
+.card-container mat-card .card-buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    background-color: rgb(0, 0, 0, 30%);
+    margin: 6px;
+    padding: 2px 4px;
+    border-radius: 6px;
+}
+
+.card-container mat-card .card-buttons .mat-icon {
+    text-shadow: 0 0 4px rgb(0, 0, 0, 15%);
+}
+
+.card-container mat-card .card-buttons button {
+    width: 36px;
+    height: 36px;
+}
+
+.card-container mat-card .card-buttons .mat-icon {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+
+
+
+  .dialog-header h1 {
+    color: var(--color-primary);
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+  }
+  
+  .btn-close {
+    border: 1px solid black;
+    border-radius: 100%;
+    height: 23px;
+    width: 23px;
+    opacity: 0.3;
+    outline: none;
+    box-shadow: none;
+  }
+  
+  .btn-close:hover {
+    background-color: rgb(0, 0, 0, 25%);
+  }
+  
+  .higlight{
+    border: .1rem solid #df4759;
+  }
+
+  .card-container mat-card img {
+    cursor: pointer;
+    object-fit: fill;
+    object-position: 0 0;
+   
+ 
+    padding: 150px;
+    margin-bottom: 1rem;
+}

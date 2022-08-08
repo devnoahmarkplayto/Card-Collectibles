@@ -1,0 +1,58 @@
+
+<div class="container">
+    <ul>
+        <li><span [class.active]=" filterBy=='All'"  (click)="getAllCards()">All</span></li>
+        <li><span [class.active]=" filterBy==='For Sale'"  (click)="getSaleCards()">For Sale</span></li>|
+        <li><span [class.active]="filterBy==='Sold'"  (click)="getSoldCards()">Sold</span></li>
+    </ul>
+</div>
+
+
+<!--
+<mat-paginator 
+color="warn"
+(page)="onPageChange($event)"
+[length]="100"
+[pageSize]="3"
+[pageSizeOptions]="[3, 6, 9, 12]">
+</mat-paginator>
+-->
+
+<div class="container-fluid my-5">
+    <div class="card-container row g-5" >
+        
+        <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let card of cards|filter: searchText">
+            <mat-card >
+                <img mat-card-image src="assets/image/card.jpg" (click)="getCardById(card.id)">
+                <span class="card-buttons">
+                    <button mat-icon-button [matMenuTriggerFor]="menu">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                </span>
+
+                <mat-menu #menu="matMenu">
+                    <button (click)="openUpdateForm(card)"  mat-menu-item>
+                        <span>Edit</span>
+                    </button>
+                    <button (click)="deleteCard(card.id)" mat-menu-item >
+                        <span>Delete</span>
+                    </button>
+                </mat-menu>
+
+                <div class="d-flex" (click)="getCardById(card.id)">
+                    <mat-card-title>{{card.name}}</mat-card-title>
+                </div> 
+
+                <mat-card-subtitle>{{card.owner}}</mat-card-subtitle>
+                
+                <div class="d-grid gap-1">
+                <button *ngIf="card.isSale" (click)="buyCard(card)" type="button"   class="btn btn-outline-warning">
+                    BUY $ {{card.price}}
+                  </button>
+                </div>
+            </mat-card>
+            
+        </div> 
+    </div>
+</div>
+

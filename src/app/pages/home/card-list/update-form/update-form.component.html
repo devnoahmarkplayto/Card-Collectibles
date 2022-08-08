@@ -1,0 +1,71 @@
+<div class="dialog-header d-flex justify-content-between">
+    <h1 mat-dialog-title>Update Collectibles</h1>
+    <button type="button" class="btn-close" mat-dialog-close></button>
+  </div>
+  <mat-divider class="mb-4"></mat-divider>
+  
+  <!-- Form group wraps formControlName for validators to work-->
+  
+  <form [formGroup]="updateForm" (ngSubmit)="updateCard()" ngNativeValidate>
+  
+    <div mat-dialog-content>
+  
+      <div class="row gx-5">
+        <div class="upload-form col">
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input  type="text" matInput  formControlName = "name">
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Owner</mat-label>
+            <input  type="text" matInput formControlName = "owner" >
+          </mat-form-field>
+
+
+          <mat-form-field appearance="fill">
+            <mat-label>Price</mat-label>
+            <input type="number" matInput formControlName = "price" >
+          </mat-form-field>
+  
+  
+          <mat-form-field appearance="fill">
+            <mat-label>Status</mat-label>
+            <mat-select  formControlName = "isSale">
+              <mat-option *ngFor="let category of categories" [value]="category.value" >
+                {{category.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+   
+        </div>
+  
+        <div class="col-auto">
+       
+          <button disabled="true" [ngClass]="{'higlight': isFilesource }" mat-flat-button *ngIf="!folder" id="upload-button"
+            onclick="document.getElementById('upload-img').click();">
+            <input id="upload-img" hidden type="file" accept="image/png, image/jpeg" (change)="onFileChange($event)">
+  
+            <span class="upload-icon" *ngIf="!isUploading">
+              <mat-icon class="material-icons-outlined" inline>cloud_upload</mat-icon>
+              Upload Image
+            </span>
+  
+            <mat-spinner *ngIf="isUploading" class="m-auto"></mat-spinner>
+  
+          </button>
+      
+        </div>
+      </div>
+  
+    </div>
+  
+    <mat-dialog-actions align="end">
+      <button type="submit" mat-flat-button color="primary">Update Collectibles</button>
+    </mat-dialog-actions>
+  
+    
+  
+  </form>
+

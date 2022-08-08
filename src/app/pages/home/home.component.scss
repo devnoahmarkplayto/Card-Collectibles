@@ -1,0 +1,73 @@
+
+.active-link {
+    background-color: var(--color-primary);
+    border-radius: 50px;
+    color: #fff !important;
+    padding: 10px;
+}
+
+mat-drawer-container {
+    background-color: #202020;
+}
+
+mat-drawer-container mat-drawer {
+    background-color: #65636a;
+    width: 200px;
+}
+
+mat-drawer-container mat-drawer ul {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+mat-drawer-container mat-drawer ul li {
+    margin: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-primary);
+    transition: 0.3s;
+    list-style-type: none;
+    text-align: center;
+}
+
+mat-drawer-container mat-drawer ul li span {
+    position: relative;
+    bottom: 4px;
+    margin: 0 10px;
+}
+
+mat-drawer-container mat-drawer ul li:hover {
+    color: var(--color-dark);
+}
+
+mat-drawer-container mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #65636a;
+}
+
+mat-drawer-container {
+    height: 100vh;
+}
+
+
+.mat-subheader {
+    color: #fcfcfc;
+    font-size: 1rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.navLogo img {
+    width: 75%;
+    margin: 50px 25px;
+}
+
+mat-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 0 6px 2px rgb(0, 0, 0, 24%);
+}

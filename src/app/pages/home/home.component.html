@@ -1,0 +1,39 @@
+<mat-drawer-container>
+
+    <mat-drawer #drawer mode="side" opened="true" class= "mat-elevation-z1">
+        <div class="navLogo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png" width="50%">
+        </div>
+        <ul>
+            <li routerLink="/cardlist" routerLinkActive="active-link" (click)="onClick('cards')" [routerLinkActiveOptions]="{ exact: true }">
+              <mat-icon>class</mat-icon> 
+              <span>Collectibles</span>
+            </li>
+        </ul>
+    </mat-drawer>
+  
+    <mat-toolbar>
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+  
+      <div class="row g-3">
+        <div class="col-auto">
+          <input class="form-control" type="text" placeholder="Search"  [(ngModel)]="searchText" autocomplete="off" >
+        </div>
+        <div class="col-auto">
+          <button mat-flat-button color="primary" (click)="openUploadForm()">
+            Create Collectibles
+          </button>
+        </div>
+      </div>
+    </mat-toolbar>
+
+    <div class="container">
+        <app-card-list *ngIf="isActivated"  [uploadData] = "cardDetails" [searchText]="searchText"> </app-card-list>
+      </div>
+   
+</mat-drawer-container>   
+
+
+  

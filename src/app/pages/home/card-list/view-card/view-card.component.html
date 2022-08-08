@@ -1,0 +1,43 @@
+
+
+<div class="dialog-header d-flex justify-content-between">
+  <h1 mat-dialog-title>View Collectibles</h1>
+  <button type="button" class="btn-close" mat-dialog-close></button>
+</div>
+
+
+
+
+<div class="container-fluid my-5">
+  <div class="card-container row g-5" >
+      
+
+          <mat-card >
+              <img mat-card-image src="assets/image/card.jpg">
+     
+          
+              <div class="d-flex">
+                  <mat-card-title>{{card.name}}</mat-card-title>
+              </div> 
+
+              <mat-card-subtitle>{{card.owner}}</mat-card-subtitle>
+              
+              <div class="d-grid gap-1">
+              <button  type="button"   class="btn btn-outline-warning">
+                  BUY $ {{card.price}}
+                </button>
+
+                <button  type="button"(click)="openUpdateForm()"   class="btn btn-outline-success">
+                  UPDATE COLLECTIBLES
+                </button>
+              </div>
+
+      
+
+          </mat-card>
+          
+
+  </div>
+</div>
+
+
